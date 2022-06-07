@@ -63,6 +63,7 @@ jobs:
       with:
         status: ${{ job.status }}
         notification_title: "Testing advanced security"
+        notify_when: 'success'
       env:
             SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook_url }}
 
