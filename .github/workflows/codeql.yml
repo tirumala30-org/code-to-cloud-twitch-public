@@ -62,7 +62,6 @@ jobs:
       uses: ravsamhq/notify-slack-action@v1
       with:
         status: ${{ job.status }}
-        notify_when: 'failure'
         notification_title: "Testing advanced security"
       env:
             SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook_url }}
