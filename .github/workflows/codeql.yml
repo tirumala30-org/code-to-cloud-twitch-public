@@ -61,7 +61,7 @@ jobs:
       uses: github/codeql-action/analyze@v2
     
     - name: Send slack notifications when job fails
-      if: ${{ inputs.force_run_check && always() }}
+      if: always()
       uses: ravsamhq/notify-slack-action@v1
       with:
         status: ${{ job.status }}
