@@ -57,6 +57,9 @@ jobs:
     #   echo "Run, Build Application using script"
     #   ./location_of_script_within_repo/buildscript.sh
     
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+    
     - name: Send slack notifications when job fails
       if: ${{ inputs.force_run_check && always() }}
       uses: ravsamhq/notify-slack-action@v1
@@ -67,5 +70,3 @@ jobs:
       env:
             SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook_url }}
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
